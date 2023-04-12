@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Test web</title>
+    <style>
+      .container {
+        max-width: 600px;
+        width: 100%;
+        margin: auto;
+        padding: 1rem;
+        background-color: #f2f2f2;
+        color: black;
+      }
+      #demo {
+        margin: 1rem 0;
+      }
+      input,
+      button {
+        padding: 0.5rem 1rem;
+      }
+      button {
+        background-color: aqua;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Dit is een gave website</h1>
+      <div id="demo">Voorlopig tekst</div>
+      <input id="numb" placeholder="type een getal" />
+
+      <button type="button" onclick="myFunction()">Submit</button>
+    </div>
+    <script>
+      function myFunction() {
+        let x = document.getElementById("numb").value;
+        let rnd = Math.floor(Math.random() * 10);
+        let text;
+        if (document.getElementById("numb").value === "") {
+          alert("empty");
+        } else {
+          if (isNaN(x) || x < 0 || x > 10) {
+            text = "Input not valid";
+          } else if (x == rnd) {
+            text = `Gefeliciteerd goed geraden: ${rnd}`;
+          } else {
+            text = `Probeer nog een keer: het getal was ${rnd}`;
+          }
+          document.getElementById("demo").innerHTML = text;
+        }
+      }
+    </script>
+  </body>
+</html>
